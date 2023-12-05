@@ -1,5 +1,15 @@
+*  { /* Avoiding the browsers default settings */
+    margin:0;
+    padding:0;
+}
+
 div {
     background-color: red;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+}
+
+html {
+    padding: 0;
+    background-color: green;
 }
