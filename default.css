@@ -1,15 +1,15 @@
 *  { /* Avoiding the browsers default settings */
     margin:0;
     padding:0;
-}
-
-div {
-    background-color: red;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
     padding: 0;
-    background-color: green;
+    background: linear-gradient(115deg, #FFFFFF,#1062FA 40%, #985FCF 80%);
+    height: 100vh;
+}
+
+ul {
+    list-style-type: none;
 }
