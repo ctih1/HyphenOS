@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Heebo:wght@300&family=Inter:wght@700&display=swap');
+
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.46);
+    z-index: var(--z-fixed);
+    top:0;
+    left: 0;
+    right: 0;
+    border-bottom-left-radius: 2rem;
+}
+
+.nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-menu {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    row-gap: 2.5rem;
+    column-gap: 4rem;
+    text-align: center;  
+    width: fit-content; 
+}
+
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    align-items: center;
+    display: flex;
+    white-space: nowrap;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    margin: 5%;
+}
+
+
+.search {
+    width: max-content;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    background-color: rgb(255, 255, 255, 0.46);
+    border-style: none;
+    border-radius: 1rem;
+    height: 40px;
+    padding: 2%;
+}
+
+#profile {
+    width: 76px;
+    height: 76px;
+}
+
+#hyphenos-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
