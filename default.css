@@ -4,7 +4,6 @@
     font-family: Arial, Helvetica, sans-serif;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    overflow: visible;
 }
 *::-webkit-scrollbar {
     display: none;
@@ -14,10 +13,17 @@ img {
     width: 100%;
 }
 
-body {
-    padding: 0;
+html {
     background: linear-gradient(115deg, #FFFFFF,#1062FA 40%, #985FCF 80%);
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
     height: fit-content;
+    height: 100%;
 }
 
 ul {
