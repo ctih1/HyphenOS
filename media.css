@@ -154,7 +154,7 @@
 }
 
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1320px) {
 
     .first-item {
         height: 10rem;
@@ -176,6 +176,7 @@
     }
 
     .right-content {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
