@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styling.css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="effects.css">
+    <script src="script.js"></script>
     <title>HyphenOS</title>
 </head>
 
@@ -39,9 +40,17 @@
                         <input placeholder="Search" type="textarea" class="search">
                     </li>
                     
-                    <li class="nav-item"><a class="nav-link">
-                        <img draggable="false" class="icon" id="profile" src="assets/account.svg">
-                    </a></li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button style="color: rgb(255,255,255,0);"class="dropdown-btn" aria-haspopup="menu"></button>
+                            <ul class="dropdown-content" role="menu">
+                              <li style="--delay: 1;"><a href="#">Log in</a></li>
+                              <li style="--delay: 2;"><a href="#">Sign out</a></li>
+                              <li style="--delay: 3;"><a href="#">Settings</a></li>
+                              <li class="danger" style="--delay: 4;"><a href="#">Log out</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -56,8 +65,8 @@
                 <h1 class="big text">HyphenOS</h1>
                 <h1 class="text semi-medium">Imagine over the edge</h1>
                 <div class="button-wrapper">
-                    <button class="small shadow hoverable">Try it out</button>
-                    <button class="small shadow hoverable">Join our discord</button>
+                    <button  type="button" class="small shadow hoverable">Try it out</button>
+                    <button onclick="location.href='https://discord.com/invite/Sn2zJJ25';"class="small shadow hoverable">Join our discord</button>
                 </div>
             </div>
             <div class="right-content">

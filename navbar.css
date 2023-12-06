@@ -43,6 +43,7 @@
     display: flex;
     align-items: center;
     text-align: center;
+    width: fit-content;
 }
 
 .nav-link {
@@ -82,4 +83,89 @@
     font-weight: 700;
     font-size: 40px;
     width: fit-content;
+}
+
+
+.dropdown {
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    max-width: 13em;
+    position: relative;
+    width: fit-content;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    width: 100%;
+}
+
+.dropdown-btn {
+    background: url("assets/account.svg");
+    width: 76px;
+    height: 76px;
+    border-style: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: scale 0.2s;
+    
+}
+
+.dropdown-content {
+    list-style: none;
+    position: absolute;
+    top: 3.2em;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin-top: 2.5rem;
+    visibility: hidden;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-1em);
+    transition: visibility 0s, max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.dropdown-content li {
+    display: flex;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+    height: 3rem;
+    width: 7rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.1px);
+    -webkit-backdrop-filter: blur(7.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: 0s;
+    margin-top: 5%;
+    transition-delay: calc(60ms * var(--delay));
+}
+
+.dropdown-content li a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 19px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}   
+
+.dropdown-btn:focus + .dropdown-content li {
+}
+
+.dropdown-btn:focus + .dropdown-content {
+  visibility: visible;
+  max-height: 300px;
+  opacity: 1;
+  animation: dropdown-animation 0.3s ease-in-out;
+}
+
+.dropdown-btn:hover {
+    scale: 1.2;
 }
