@@ -33,9 +33,6 @@
     font-size: 19px;
 }
 
-.main-wrapper {
-    margin-top: 15rem;
-}
 
 
 .text {
@@ -90,6 +87,10 @@ button:active {
 .devices {
 
 }
+.phones {
+    height: fit-content;
+}
+
 .phone-images {
     display: flex;
     width: 100%;
