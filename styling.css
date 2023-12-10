@@ -43,7 +43,7 @@
     padding-top:3%;
     padding-bottom:3%;
     border-style: none;
-    border-radius: 1rem;
+    border-radius: 6px;
     color: white;
     background-color: #0069FF;
 }
@@ -68,7 +68,7 @@
     align-items: center;
     margin-left: 5%;
     width: 100%;
-}
+}   
 
 button:active {
     transform: translateY(0.2rem);
