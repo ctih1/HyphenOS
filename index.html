@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="styling.css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="effects.css">
-    <script src="script.js"></script>
     <title>HyphenOS</title>
 </head>
 
@@ -42,7 +41,7 @@
                     
                     <li class="nav-item">
                         <div class="dropdown">
-                            <button ontouchstart="" style="color: rgb(255,255,255,0);"class="dropdown-btn scale" aria-haspopup="menu"></button>
+                            <button onclick="this.focus()" style="color: rgb(255,255,255,0);"class="dropdown-btn scale" aria-haspopup="menu"></button>
                             <ul class="dropdown-content" role="menu">
                               <li style="--delay: 1;"><a href="https://example.com">Log in</a></li>
                               <li style="--delay: 2;"><a href="https://example.com">Sign out</a></li>
@@ -58,20 +57,30 @@
     <div class="first-item">
                     
     </div>
-    <div class="main-wrapper">
-        <div class="presentation ">
-            <div class="left-content">
-                <h1 class="semi-big text">Welcome to</h1>
-                <h1 class="big text">HyphenOS</h1>
-                <h1 class="text semi-medium">Imagine over the edge</h1>
-                <div class="button-wrapper">
-                    <button  onclick="TryIt();" target="_bank" type="button" class="small shadow hoverable">Try it out</button>
-                    <button onclick="DC();" target="_bank" class="small shadow hoverable">Join our discord</button>
+    <div class="scroll-container">
+        <div class="main-wrapper">
+            <div id="presentation" class="presentation scroll-item">
+                <div class="left-content">
+                    <h1 class="semi-big text">Welcome to</h1>
+                    <h1 class="big text">HyphenOS</h1>
+                    <h1 class="text semi-medium">Imagine over the edge</h1>
+                    <div class="button-wrapper">
+                        <button  onclick="TryIt();" target="_bank" type="button" class="small shadow hoverable">Try it out</button>
+                        <button onclick="DC();" target="_bank" class="small shadow hoverable">Join our discord</button>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <img onclick="document.querySelector('#phone').scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });" src="assets/devices.svg">
                 </div>
             </div>
-            <div class="right-content">
-                <img src="assets/devices.svg">
+            <div id="phone" class="phones scroll-item">
+                <img class="phone phone-left" src="assets/phones/1.png">
+                <img class="phone phone-down" src="assets/phones/2.png">
+                <img class="phone" src="assets/phones/3.png">
+                <img class="phone phone-down" src="assets/phones/4.png">
+                <img class="phone phone-right" src="assets/phones/5.png">
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>

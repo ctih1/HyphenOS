@@ -57,7 +57,7 @@
     align-items: right;
     justify-content: right;
     float: right;
-
+    height:auto;
 }
 
 
@@ -72,4 +72,40 @@
 
 button:active {
     transform: translateY(0.2rem);
+}
+
+.devices {
+
+}
+.phones {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-evenly;
+    margin: 0;
+    scroll-margin-block: 2em;
+}
+
+.phone {
+    max-width: 17.5%;
+    display: flex;
+    align-items: center;
+}
+
+.phone:hover {
+    transform: translateY();
+}
+
+
+.center {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    
+    text-align: center;
+}
+
+
+.phone-down {
+    transform: translateY(81px);
 }

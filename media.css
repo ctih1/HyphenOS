@@ -113,6 +113,10 @@
         height: 10rem;
     }
 
+    .main-wrapper {
+        margin-top: 0px;
+    }
+
     .presentation {
         display:inline;
         justify-content: auto;
@@ -189,6 +193,7 @@
         align-items: last baseline;
     }
 
+
     .search {
         -webkit-transition: width 0.2s ease-in-out;
         -moz-transition: width 0.2s ease-in-out;
@@ -228,9 +233,7 @@
         height: auto;
     }
 
-    .main-wrapper {
-        margin-top: 10rem;
-    }
+
     .big {
         font-family: 'Inter', sans-serif;
         font-weight: 600;

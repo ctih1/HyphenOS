@@ -1,6 +1,6 @@
 *  { /* Avoiding the browsers default settings */
-    margin:0;
-    padding:0;
+    margin:1px;
+    padding:1px;
     font-family: Arial, Helvetica, sans-serif;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -27,16 +27,13 @@ button {
     background-color: #0069FF;
 }
 
-html {
-    
-}
-
 body {
     padding: 0;
     margin: 0;
     height: fit-content;
     background: linear-gradient(115deg, #FFFFFF,#1062FA 50%, #985FCF 80%);
-    height: 100vh;
+    height: fit-content;
+    scroll-behavior: smooth;
 }
 
 ul {
@@ -45,4 +42,8 @@ ul {
 
 input {
     outline: none;
+}
+
+section {
+    padding:25rem;
 }
