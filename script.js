@@ -25,26 +25,3 @@ container.addEventListener('wheel', (event) => {
     behavior: 'smooth'
   });
 });
-
-container.addEventListener('touchstart', (event) => {
-  isScrolling = true;
-  startPos = event.touches[0].clientY;
-  currentPos = startPos;
-});
-
-container.addEventListener('touchmove', (event) => {
-  if (!isScrolling) return;
-
-  const touch = event.touches[0];
-  const deltaY = currentPos - touch.clientY;
-  currentPos = touch.clientY;
-
-  container.scrollBy({
-    top: deltaY,
-    behavior: 'smooth'
-  });
-});
-
-container.addEventListener('touchend', () => {
-  isScrolling = false;
-});
