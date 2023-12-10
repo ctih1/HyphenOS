@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="styling.css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="effects.css">
+    <meta content="HyphenOS" property="og:title" />
+    <meta content="alegzdev loves pooble.dev forever <3" property="og:description" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
     <title>HyphenOS</title>
 </head>
 
@@ -54,9 +57,7 @@
             </div>
         </nav>
     </header>
-    <div class="first-item">
-                    
-    </div>
+    <section style="padding: 2rem;"></section>
     <div class="scroll-container">
         <div class="main-wrapper">
             <div id="presentation" class="presentation scroll-item">
@@ -73,14 +74,55 @@
                     <img onclick="document.querySelector('#phone').scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });" src="assets/devices.svg">
                 </div>
             </div>
+            <section></section>
             <div id="phone" class="phones scroll-item">
-                <img class="phone phone-left" src="assets/phones/1.png">
-                <img class="phone phone-down" src="assets/phones/2.png">
-                <img class="phone" src="assets/phones/3.png">
-                <img class="phone phone-down" src="assets/phones/4.png">
-                <img class="phone phone-right" src="assets/phones/5.png">
+                <h1 class="big" style="text-align:center; font-weight:500; margin-top:3vh;">Design by your liking</h1>
+                <div class="phone-images">
+                    <img class="phone phone-left" src="assets/phones/1.png">
+                    <img class="phone phone-down" src="assets/phones/2.png">
+                    <img class="phone" src="assets/phones/3.png">
+                    <img class="phone phone-down" src="assets/phones/4.png">
+                    <img class="phone phone-right" src="assets/phones/5.png">
+                </div>
+                <p class="semi-medium" style="text-align:center; margin-top: 10rem;">You can customize your device using the super icons, widgets, big folders, wallpapers and fonts</p>
             </div>
+            <section></section>
+            <div style="margin-bottom: auto; margin-top: 5rem;" id="widget" class="scroll-item">
+                <div class="grid-holder" style="margin-top: 5rem;">
+                    <h1 class="big" style="text-align:center; font-weight:500; margin-bottom:3%;">Incredible new widgets</h1>
+                    <div class="widget-images">
+                        <img src="assets/widgets/1.png">
+                        <img src="assets/widgets/2.png">
+                        <img src="assets/widgets/3.png">
+                        <img src="assets/widgets/4.png">
+                        <img src="assets/widgets/5.png">
+                        <img src="assets/widgets/6.png">
+                        <img src="assets/widgets/7.png">
+                        <img src="assets/widgets/8.png">
+                        <img src="assets/widgets/9.png">
+                        <img src="assets/widgets/10.png">
+                        <img src="assets/widgets/11.png">
+                        <img src="assets/widgets/12.png">
+                    </div>
+                    <p class="semi-medium" style="text-align:center; margin-top: 5%;">Make your device more beautiful and easier to use with the new HyphenOS widgets</p>
+                </div>  
+            </div>
+            <section></section>
+            <div style="margin-bottom: auto;" id="perforance" class="scroll-item">
+                <h1 class="big" style="text-align:center; font-weight:500; margin-bottom:3%;">Better optimization</h1>
+                <div class="graph-holder">
+                    <h1 style="margin:auto;"class="big-minus">Lag amount</h1>
+                    <div class="graph-content">
+                        <p class="big-minus">Regular ROMs</p>
+                        <img src="assets/red_bar.png">
+                        <p class="big-minus">HyphenOS</p>
+                        <img src="assets/green_bar.png">
+                    </div>
+                </div>  
+            </div>
+            <section></section>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
+

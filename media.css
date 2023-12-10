@@ -109,6 +109,9 @@
 
 @media all and (max-width: 1320px) {
 
+    section {
+        padding: 10rem;
+    }
     .first-item {
         height: 10rem;
     }

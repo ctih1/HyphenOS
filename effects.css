@@ -17,7 +17,7 @@
       
     .scroll-item {
         margin-top: 15%;
-        height: 100%;
+        height: fit-content;
         scroll-snap-align: start;
     }
       
