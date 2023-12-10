@@ -117,7 +117,7 @@
     }
 
     .main-wrapper {
-        position: absolute;
+        height: fit-content;
         width: 100%;
         margin-top: 12vh;
     }
