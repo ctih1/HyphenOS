@@ -11,24 +11,40 @@ function PlaceholderButton() {
 }
 
 const container = document.querySelector('.scroll-container');
-const items = document.querySelectorAll('.scroll-item');
+let isScrolling = false;
+let startPos = 0;
+let currentPos = 0;
 
 container.addEventListener('wheel', (event) => {
   event.preventDefault();
-  const delta = event.deltaY;
-
+  
+  const delta = event.deltaY || event.detail || event.wheelDelta;
+  
   container.scrollBy({
     top: delta,
     behavior: 'smooth'
   });
-}, {passive: false});
+});
 
 container.addEventListener('touchstart', (event) => {
-    event.preventDefault();
-    const delta = event.deltaY;
-  
-    container.scrollBy({
-      top: delta,
-      behavior: 'smooth'
-    });
-  }, {passive: false});
+  isScrolling = true;
+  startPos = event.touches[0].clientY;
+  currentPos = startPos;
+});
+
+container.addEventListener('touchmove', (event) => {
+  if (!isScrolling) return;
+
+  const touch = event.touches[0];
+  const deltaY = currentPos - touch.clientY;
+  currentPos = touch.clientY;
+
+  container.scrollBy({
+    top: deltaY,
+    behavior: 'smooth'
+  });
+});
+
+container.addEventListener('touchend', () => {
+  isScrolling = false;
+});
