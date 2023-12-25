@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- I am so sorry for anyone else editing this code. -->
+<!-- Discord: @icodeinjava -->
+
+<head>
+    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="effects.css">
+    <meta content="HyphenOS" property="og:title" />
+    <meta content="The official website for HyphenOS" property="og:description" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+    <title>HyphenOS</title>
+</head>
+    
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item big"><a class="nav-link" id="hyphenos-text" style="font-family: inter">
+                        <img draggable="false" class="icon scale logo" src="assets/logo.svg">
+                        HyphenOS
+                    </a></li>
+                    <li class="nav-item"><a class="nav-link">
+                        <img onclick="PlaceholderButton();" draggable="false" class="icon scale" src="assets/work.svg">
+                        Work with us!
+                    </a></li>
+                    <li class="nav-item"><a class="nav-link">
+                        <img onclick="PlaceholderButton();" draggable="false" class="icon scale" src="assets/support.svg">
+                        Support
+                    </a></li>
+                    <li class="nav-item"><a class="nav-link">
+                        <img onclick="PlaceholderButton();" draggable="false" class="icon scale" src="assets/download.svg">
+                        Download
+                    </a></li>
+                    <li class="nav-item"><a class="nav-link">
+                        <img onclick="PlaceholderButton();" draggable="false" class="icon scale" src="assets/faq.svg">
+                        FAQ
+                    </a></li>
+
+                    <li class="nav-item">
+                        <input placeholder="Search" type="textarea" class="search">
+                    </li>
+                    
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button id="dropdown-extend" onclick="this.focus()" style="color: rgb(255,255,255,0);"class="dropdown-btn scale" aria-haspopup="menu"></button>
+                            <ul id="account-choices" class="dropdown-content" role="menu">
+   '                          <li style="--delay: 1; display:none;"><a href="https://example.com"></a></li>'
+                              <li id="log-in" style="--delay: 2;"><a href="/login.html">Log in</a></li>
+                              <li style="--delay: 4;"><a id="settings" href="https://example.com">Settings</a></li>
+                              <li id="sign-out" style="--delay: 3; background-color: rgb(255,100,100,0.5)"><a href="https://example.com">Sign out</a></li>
+                              <li style="--delay: 5; display:none;"><a href="https://example.com"></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section style="padding: 2rem;"></section>
+    <div class="scroll-container">
+        <div class="main-wrapper">
+            <div id="presentation" class="presentation scroll-item">
+                <div class="left-content">
+                    <h1 class="semi-big text">Welcome to</h1>
+                    <h1 class="big text">HyphenOS</h1>
+                    <h1 class="text semi-medium">Imagine over the edge</h1>
+                    <div class="button-wrapper">
+                        <button  onclick="TryIt();" target="_bank" type="button" class="small shadow hoverable">Try it out</button>
+                        <button onclick="DC();" target="_bank" class="small shadow hoverable">Join our discord</button>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <img onclick="document.querySelector('#phone').scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });" src="assets/devices.svg">
+                </div>
+            </div>
+            <section></section>
+            <div id="phone" class="phones scroll-item">
+                <h1 class="big" style="text-align:center; font-weight:500; margin-top:3vh;">Design by your liking</h1>
+                <div class="phone-slideshow">
+                    <img id="device" class="phone" src="assets/phones/5.png">
+                </div>
+                <p class="semi-medium" style="text-align:center;">You can customize your device using the super icons, widgets, big folders, wallpapers and fonts</p>
+            </div>
+            <section></section>
+            <div style="margin-bottom: auto; margin-top: 5rem;" id="widget" class="scroll-item">
+                <div class="grid-holder" style="margin-top: 5rem;">
+                    <h1 class="big" style="text-align:center; font-weight:500; margin-bottom:3%;">Incredible new widgets</h1>
+                    <div class="widget-images">
+                        <img src="assets/widgets/1.png">
+                        <img src="assets/widgets/2.png">
+                        <img src="assets/widgets/3.png">
+                        <img src="assets/widgets/4.png">
+                        <img src="assets/widgets/5.png">
+                        <img src="assets/widgets/6.png">
+                        <img src="assets/widgets/7.png">
+                        <img src="assets/widgets/8.png">
+                        <img src="assets/widgets/9.png">
+                        <img src="assets/widgets/10.png">
+                        <img src="assets/widgets/11.png">
+                        <img src="assets/widgets/12.png">
+                    </div>
+                    <p class="semi-medium" style="text-align:center; margin-top: 5%;">Make your device more beautiful and easier to use with the new HyphenOS widgets</p>
+                </div>  
+            </div>
+            <section></section>
+            <div style="margin-bottom: auto;" id="perforance" class="scroll-item">
+                <h1 class="big" style="text-align:center; font-weight:500; margin-bottom:3%;">Better optimization</h1>
+                <div class="graph-holder">
+                    <h1 style="margin:auto;"class="big-minus">Lag amount</h1>
+                    <div class="graph-content">
+                        <p class="big-minus">Regular ROMs</p>
+                        <img src="assets/red_bar.png">
+                        <p class="big-minus">HyphenOS</p>
+                        <img src="assets/green_bar.png">
+                    </div>
+                </div>  
+            </div>
+            <section></section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+

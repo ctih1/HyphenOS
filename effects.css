@@ -1,0 +1,28 @@
+.shadow {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 50ms;
+}
+
+.hoverable:hover {
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+    .scroll-container {
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        scroll-snap-stop: always;
+    }
+      
+    .scroll-item {
+        margin-top: 15%;
+        height: fit-content;
+        scroll-snap-align: start;
+    }
+      
+    @keyframes scroll {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-100%); }
+    }
