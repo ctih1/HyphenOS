@@ -21,11 +21,14 @@ function redirectToLogin() {
   window.location.href="login.html";
 }
 signoutButton = document.getElementById("sign-out").addEventListener("click",SignOut);
-
+document.getElementById("settings").addEventListener("click", openSettings);
 function SignOut() {
   localStorage.removeItem("USR");
   localStorage.removeItem("PSW");
   window.location.reload();
+}
+function opensettings() {
+  window.location.href = "account.html";
 }
 
 if(localStorage.getItem("USR")!==null) {
@@ -41,7 +44,8 @@ var index = 0;
 preload("assets/phones/1.png","assets/phones/2.png","assets/phones/3.png","assets/phones/4.png","assets/phones/5.png");
 try {
   document.getElementById("log-in").href = "login.html";
-  document.getElementById("sign-up").href = "signup.html";  
+  document.getElementById("sign-up").href = "signup.html"; 
+  document.getElementById("settings").href = "account.html"; 
 } catch(Error) {
   null;
 }
