@@ -20,9 +20,14 @@ function preload() {
 function redirectToLogin() {
   window.location.href="login.html";
 }
+signoutButton = document.getElementById("sign-out").addEventListener("click",SignOut);
 
-console.log(localStorage.getItem("TOKEN_"));
-if(localStorage.getItem("TOKEN_")!==null) {
+function SignOut() {
+  localStorage.removeItem("TOKEN");
+  window.location.reload();
+}
+
+if(localStorage.getItem("TOKEN")!==null) {
   document.getElementById("log-in").style["display"]="none";
 }
 else {
@@ -63,39 +68,3 @@ setInterval(function() {
   phone.src = images[index].src;
   index++;
 },4000)
-
-async function digestMessage(message) {
-  const msgUint8 = new TextEncoder().encode(message); // encode as (utf-8) Uint8Array
-  const hashBuffer = await crypto.subtle.digest("SHA-256", msgUint8); // hash the message
-  const hashArray = Array.from(new Uint8Array(hashBuffer)); // convert buffer to byte array
-  const hashHex = hashArray
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join(""); // convert bytes to hex string
-  return hashHex;
-}
-
-
-function SignUp(element) {
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
-  let email = document.getElementById("email").value;
-  let warning = document.getElementById("warning");
-  let language = navigator.language || navigator.userLanguage; 
-  element.setAttribute("disabled","disabled");
-  const response = fetch(`https://hyphenos.ctih.repl.co/sign-up?username=${username}&password=${password}&email=${email}&language=${language}`).then(data => {
-    if(data.status===409) {
-      warning.innerHTML="Username taken!"
-    }
-    if(data.status===200) {
-        digestMessage(username+password).then(token => {
-          localStorage.setItem("TOKEN",token);
-        }
-      );
-      console.log(data);
-      
-    }
-    element.disabled = false;
-  });
-  
-
-}

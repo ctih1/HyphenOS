@@ -1,25 +1,25 @@
 <head>
-    <link rel="stylesheet" href="default.css">
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="styling.css">
-    <link rel="stylesheet" href="media.css">
-    <link rel="stylesheet" href="effects.css">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="account.css">
 </head>
 
-<body style="display:flex; justify-content: center; align-items: center; padding:0; text-align:center;">
-    <div style="padding: 2%; background-color: rgb(255,255,255,0.4); border-radius: 2rem; display: inline; justify-content: center; align-items:center; text-align:center;">
+<body style="">
+    <div class="container">
         <div main>
+            <h1 style="font-size: 4em; opacity: 0.7">Sign up</h1>
             <h2 id="warning"></h2>
-
-            <div style="margin: 5%;">
-                <input id="username" type="email" style="font-family:'Inter', sans-serif; font-size : auto; opacity:0.8" placeholder="Username">
-                <input id="password" type=password style="font-family:'Inter', sans-serif; font-size : auto; opacity:0.8" placeholder="Password">
-                <input id="email" type="text" style="font-family:'Inter', sans-serif; font-size : auto; opacity:0.8" placeholder="Email">
+            <div class="inputs" style="margin: 5%;">
+                <input id="username" type="email" placeholder="Username">
+                <p id="username-hint"></p>
+                <input id="password" type=password  placeholder="Password">
+                <input id="confirm-password" type=password  placeholder="Confirm password">
+                <p id="password-hint"></p>
+                <input id="email" type="text" placeholder="Email">
+                <p id="email-hint"></p>
             </div>
-            <button onclick="SignUp(this);">Sign up</button>
+            <button type="submit" onclick="SignUp(this);">Sign up</button>
         </div>
         <a href="login.html">Login?</a>
     </div>
-    <script src="script.js"></script>
+    <script src="login.js"></script>
 </body>

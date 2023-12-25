@@ -1,0 +1,97 @@
+* {
+    margin: 2%;
+    font-family: 'Inter',sans-serif;
+    transition: all 0.3s
+}
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:0;
+    text-align:center;
+    background: linear-gradient(115deg, #FFFFFF,#1062FA 50%, #985FCF 80%);
+    margin: 0;
+    overflow: hidden;
+}
+
+html {
+    margin: 0;
+}
+
+input {
+    font-family:'Inter', sans-serif;
+    opacity:0.8;
+    font-weight: 300;
+    outline: none;
+    width: max-content;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1em;
+    background-color: rgb(255, 255, 255, 0.7);
+    border-width: 0;
+    border-radius: 1em;
+    height: 4em;
+    padding: 2%;
+    width: 90%;
+    margin: 1%;
+
+}
+
+button {
+    width: 100%;
+    padding-left: 7%;
+    padding-right: 7%;
+    margin:0.5em;  
+    padding-top:3%;
+    padding-bottom:3%;
+    border-style: none;
+    border-radius: 1em;
+    color: white;
+    font-size: 1em;
+    background-color: #0069FF;
+}
+
+button:disabled {
+    cursor: progress;
+    opacity: 0.5;
+    transition: all 1s;
+}
+
+.container {
+    padding: 2%;
+    width: 90%;
+    background-color: rgb(255,255,255,0.4);
+    border-radius: 2rem;
+    display: inline; justify-content: center;
+    align-items:center;
+    text-align:center;
+}
+
+p {
+    opacity: 0.7;
+    margin: 0;
+}
+
+.inputs {
+    height: fit-content;
+    overflow: hidden;
+}
+
+.invalid {
+    border-style: solid;
+    border-width: 8px;
+    border-color: rgba(255, 0, 0, 0.551);
+}
+
+@media all and (max-width: 1003px) {
+    input {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1.5em;
+    }
+    
+    a, p{
+        font-size: 1.25em;
+    }
+}
