@@ -83,7 +83,8 @@ async function SignUp(element) {
 
     if(data.status===200) {
         digestMessage(username+password).then(token => {
-            localStorage.setItem("TOKEN",token);
+	    	localStorage.setItem("USR",username);
+		localStorage.setItem("PSW", password);
         });
         window.location.href = "index.html"
       }
@@ -100,7 +101,8 @@ async function Login(element) {
     
     await digestMessage(username+password).then(token => {
         let creds = {
-            "TOKEN": token
+            "USR": username,
+	    "PSW": password
         }
         console.log(creds);
 
@@ -116,7 +118,9 @@ async function Login(element) {
                 warning.innerHTML = "Invalid login.";
             }
             if(data.status===200) {
-                localStorage.setItem("TOKEN",token);
+		console.log(username);
+                localStorage.setItem("USR",username);
+		localStorage.setItem("PSW", password);
                 window.location.href = "index.html";
             }
         })
@@ -127,9 +131,12 @@ async function GetToken() {
     return localStorage.getItem("TOKEN");
 }
 async function RetrieveData() {
-    const token = localStorage.getItem("TOKEN");
+    const username = localStorage.getItem("USR");
+    const password = localStorage.getItem("PSW");
+
     let creds = {
-        "TOKEN": token
+        "USR": username,
+	"PSW": password
     }
     console.log(creds);
 
@@ -144,7 +151,7 @@ async function RetrieveData() {
     .then(response => response.json()).then(data => {
         if(data.length < 5) {
             console.log("Error!");
-            return;
+            return;	
         }
         var date = new Date(0);
         date.setSeconds(data["created"])

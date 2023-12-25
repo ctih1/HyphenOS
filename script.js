@@ -23,11 +23,12 @@ function redirectToLogin() {
 signoutButton = document.getElementById("sign-out").addEventListener("click",SignOut);
 
 function SignOut() {
-  localStorage.removeItem("TOKEN");
+  localStorage.removeItem("USR");
+  localStorage.removeItem("PSW");
   window.location.reload();
 }
 
-if(localStorage.getItem("TOKEN")!==null) {
+if(localStorage.getItem("USR")!==null) {
   document.getElementById("log-in").style["display"]="none";
 }
 else {
