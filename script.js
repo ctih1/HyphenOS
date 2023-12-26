@@ -20,8 +20,10 @@ function preload() {
 function redirectToLogin() {
   window.location.href="login.html";
 }
+
 signoutButton = document.getElementById("sign-out").addEventListener("click",SignOut);
 document.getElementById("settings").addEventListener("click", openSettings);
+
 function SignOut() {
   localStorage.removeItem("USR");
   localStorage.removeItem("PSW");
@@ -31,7 +33,7 @@ function opensettings() {
   window.location.href = "account.html";
 }
 
-if(localStorage.getItem("USR")!==null) {
+if(localStorage.getItem("USR") !== null && localStorage.getItem("USR") !== undefined){
   document.getElementById("log-in").style["display"]="none";
 }
 else {
