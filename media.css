@@ -116,6 +116,15 @@
         height: 10rem;
     }
 
+    .dropdown-content li a {
+        font-size: 34px;
+    }
+
+    .dropdown-content li {
+        padding: 10%;
+        left: -20px;
+    }
+
     .main-wrapper {
         height: fit-content;
         width: 100%;
@@ -205,12 +214,12 @@
 
 @media all and (max-width: 980px) {
     .icon {
-        width: 40px;
-        height: 40px;
-    }
-    .logo {
         width: 60px;
         height: 60px;
+    }
+    .logo {
+        width: 80px;
+        height: 80px;
         align-items: last baseline;
     }
 
@@ -228,7 +237,7 @@
     }
 
     .search:focus {
-        font-size: 16px;
+        font-size: 29px;
         width: 160px;
         border-radius: 2rem;
     }

@@ -80,13 +80,20 @@ container.addEventListener('wheel', (event) => {
   });
 });
 
-setInterval(function() {
-  if(index >= 5){
-    index = 0;  
-  }
-  phone.src = images[index].src;
-  index++;
-},4000)
+async function Slideshow() {
+  return await new Promise(resolve => {
+    const interval = setInterval(() => {
+      resolve(null);
+      if(index >= 5){
+        index = 0;  
+      }
+      phone.src = images[index].src;
+      index++;
+    },9000)
+  })
+}
+
+const bar = Slideshow("");
 
 log("!!! WARNING !!!", "warning");
 log("### Running unofficial code CAN and WILL give other people access to your account. ###","warning")

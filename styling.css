@@ -104,7 +104,9 @@ button:active:enabled {
 }
 
 .phone {
+    width: 15rem;
     max-width: 15rem;
+    object-fit: fill;
     display: flex;
     align-items: center;
 }
