@@ -9,7 +9,6 @@ async function digestMessage(message) {
 }
 
 async function removeInvalid(user,pass,cpass,email,uh,ph,eh) {
-    console.log("removing...");
     user.classList.remove("invalid");
     pass.classList.remove("invalid");
     cpass.classList.remove("invalid");
@@ -36,7 +35,6 @@ async function SignUp(element) {
     removeInvalid(username_,password_,confirm_password_,email_,uh,ph,eh);
 
     let language = navigator.language || navigator.userLanguage; 
-    console.log(email.indexOf("@") > -1);
     if(!(username.length>3&&
         password.length>=8&&
         confirm_password===password&&
@@ -82,11 +80,7 @@ async function SignUp(element) {
     }
 
     if(data.status===200) {
-        digestMessage(username+password).then(token => {
-	    	localStorage.setItem("USR",username);
-		localStorage.setItem("PSW", password);
-        });
-        window.location.href = "index.html"
+        window.location.href = "login.html"
       }
       element.disabled = false;
     });
@@ -98,47 +92,49 @@ async function Login(element) {
     let password = document.getElementById("password").value;
     let warning = document.getElementById("warning");
     let password_ = document.getElementById("password");
-    
-    await digestMessage(username+password).then(token => {
-        let creds = {
-            "USR": username,
-	    "PSW": password
+    digestMessage(password).then(_password => {
+        
+    digestMessage(username).then(_username => {
+        TOKEN = `${_password}|${_username}`;
+    element.setAttribute("disabled","disabled");
+    let creds = {
+        "TOKEN": TOKEN,
+    }
+    const response = fetch("https://hyphenos.ctih.repl.co/login", {
+        method:"POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(creds)
+    })
+    .then(data => {
+        element.disabled = false;
+        if(data.status===401) {
+            warning.innerHTML = "Invalid login.";
         }
-        console.log(creds);
-
-        const response = fetch("https://hyphenos.ctih.repl.co/login", {
-            method:"POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(creds)
+        if(data.status===200) {
+            digestMessage(password).then(_password => {
+                TOKEN = `${_password}|${_username}`;
+                localStorage.setItem("TOKEN",TOKEN);
+            })
+            window.location.href = "index.html";
+        }
+            })
         })
-        .then(data => {
-            if(data.status===401) {
-                warning.innerHTML = "Invalid login.";
-            }
-            if(data.status===200) {
-		console.log(username);
-                localStorage.setItem("USR",username);
-		localStorage.setItem("PSW", password);
-                window.location.href = "index.html";
-            }
-        })
-    });
+        
+    })
 }
 
 async function GetToken() {
     return localStorage.getItem("TOKEN");
 }
 async function RetrieveData() {
-    const username = localStorage.getItem("USR");
-    const password = localStorage.getItem("PSW");
+    const TOKEN = localStorage.getItem("TOKEN");
+
 
     let creds = {
-        "USR": username,
-	"PSW": password
+        "TOKEN": TOKEN,
     }
-    console.log(creds);
 
     const response = fetch("https://hyphenos.ctih.repl.co/retrieve-data", {
         method:"POST",
@@ -150,12 +146,10 @@ async function RetrieveData() {
     
     .then(response => response.json()).then(data => {
         if(data.length < 5) {
-            console.log("Error!");
             return;	
         }
         var date = new Date(0);
         date.setSeconds(data["created"])
-        console.log(data);
         document.getElementById("name").innerHTML = data["username"];
         document.getElementById("email").innerHTML = data["email"];
         document.getElementById("lang").innerHTML = data["lang"];

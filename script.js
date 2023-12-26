@@ -1,3 +1,26 @@
+function log(msg, color) {
+  color = color || "black";
+  bgc = "White";
+  switch (color) {
+      case "success":  color = "Green";      bgc = "LimeGreen";       break;
+      case "info":     color = "DodgerBlue"; bgc = "Turquoise";       break;
+      case "error":    color = "Red";        bgc = "Black";           break;
+      case "start":    color = "OliveDrab";  bgc = "PaleGreen";       break;
+      case "warning":  color = "Tomato";     bgc = "Black";           break;
+      case "end":      color = "Orchid";     bgc = "MediumVioletRed"; break;
+      default: color = color;
+  }
+
+  if (typeof msg == "object") {
+      console.log(msg);
+  } else if (typeof color == "object") {
+      console.log("%c" + msg, "color: PowderBlue;font-weight:bold; background-color: RoyalBlue;");
+      console.log(color);
+  } else {
+      console.log("%c" + msg, "color:" + color + ";font-weight:bold; background-color: " + bgc + ";");
+  }
+}
+
 function DC() {
     window.open("https://discord.com/invite/7dUUETkk5j", "_blank");
 }
@@ -24,14 +47,11 @@ function redirectToLogin() {
 signoutButton = document.getElementById("sign-out").addEventListener("click",SignOut);
 
 function SignOut() {
-  localStorage.removeItem("USR");
-  localStorage.removeItem("PSW");
+  localStorage.removeItem("TOKEN");
   window.location.reload();
 }
 
-console.log(localStorage.getItem("USR"))
-
-if(localStorage.getItem("USR")===null ||localStorage.getItem("USR")===undefined) {
+if(localStorage.getItem("TOKEN")===null ||localStorage.getItem("TOKEN")===undefined) {
   document.getElementById("account-choices").style["display"] = "none";
   document.getElementById("dropdown-extend").addEventListener("click",redirectToLogin);
 }
@@ -54,8 +74,6 @@ container.addEventListener('wheel', (event) => {
   event.preventDefault();
   
   const delta = event.deltaY || event.detail || event.wheelDelta;
-  console.log(delta);
-  console.log(event.deltaY, event.detail, event.wheelDelta );
   container.scrollBy({
     top: delta,
     behavior: 'smooth'
@@ -63,10 +81,12 @@ container.addEventListener('wheel', (event) => {
 });
 
 setInterval(function() {
-  console.log(images);
   if(index >= 5){
-    index = 0;
+    index = 0;  
   }
   phone.src = images[index].src;
   index++;
 },4000)
+
+log("!!! WARNING !!!", "warning");
+log("### Running unofficial code CAN and WILL give other people access to your account. ###","warning")

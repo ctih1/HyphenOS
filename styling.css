@@ -7,6 +7,7 @@
 }
 
 .big-almost {
+    font-family: 'Inter', sans-serif;
     font-size: 64px;
     font-weight: 500;
 }
@@ -72,8 +73,6 @@
     height:auto;
 }
 
-
-
 .presentation {
     display: flex;
     justify-content: center;
@@ -81,6 +80,7 @@
     margin-left: 5%;
     height: fit-content;
     width: 100%;
+    overflow: hidden;
 }   
 
 button:active:enabled {
