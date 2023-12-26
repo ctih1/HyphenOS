@@ -59,6 +59,7 @@ async function SignUp(element) {
         return;
     }
     element.setAttribute("disabled","disabled");
+
     const creds = {
         "username": username,
         "password": password,
@@ -129,8 +130,8 @@ async function GetToken() {
     return localStorage.getItem("TOKEN");
 }
 async function RetrieveData() {
+    console.log("Retrieving data...");
     const TOKEN = localStorage.getItem("TOKEN");
-
 
     let creds = {
         "TOKEN": TOKEN,
@@ -148,12 +149,15 @@ async function RetrieveData() {
         if(data.length < 5) {
             return;	
         }
+        if(data.status!==200) {
+            window.location.href="login.html"
+        }
         var date = new Date(0);
         date.setSeconds(data["created"])
-        document.getElementById("name").innerHTML = data["username"];
-        document.getElementById("email").innerHTML = data["email"];
-        document.getElementById("lang").innerHTML = data["lang"];
-        document.getElementById("country").innerHTML = data["country"];
-        document.getElementById("created").innerHTML = date;
+        document.getElementById("name").innerHTML = `Username: @${data["username"]}`;
+        document.getElementById("email").innerHTML = `Email: ${data["email"]}`;
+        document.getElementById("lang").innerHTML = `Language: ${data["lang"]}`;
+        document.getElementById("country").innerHTML = `Country: ${data["country"]}`;
+        document.getElementById("created").innerHTML = `Created on: ${date}`;
     });
 }

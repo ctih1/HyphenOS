@@ -33,7 +33,11 @@ input {
     padding: 2%;
     width: 90%;
     margin: 1%;
+}
 
+input[type=checkbox] {
+    width: 1rem;
+    height: 1rem;
 }
 
 button {
@@ -58,14 +62,18 @@ button:disabled {
 
 .container {
     padding: 2%;
-    width: 90%;
-    background-color: rgb(255,255,255,0.4);
-    border-radius: 2rem;
     display: inline; justify-content: center;
     align-items:center;
     text-align:center;
 }
 
+.card {
+    width: 90%;
+    background-color: rgb(255,255,255,0.4);
+    padding: 2%;
+    border-radius: 2rem;
+
+}
 p {
     opacity: 0.7;
     margin: 0;
