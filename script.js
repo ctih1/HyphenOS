@@ -22,15 +22,11 @@ function redirectToLogin() {
 }
 
 signoutButton = document.getElementById("sign-out").addEventListener("click",SignOut);
-document.getElementById("settings").addEventListener("click", openSettings);
 
 function SignOut() {
   localStorage.removeItem("USR");
   localStorage.removeItem("PSW");
   window.location.reload();
-}
-function openSettings() {
-  window.location.href = "account.html";
 }
 
 console.log(localStorage.getItem("USR"))
