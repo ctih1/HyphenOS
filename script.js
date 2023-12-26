@@ -29,7 +29,7 @@ function SignOut() {
   localStorage.removeItem("PSW");
   window.location.reload();
 }
-function opensettings() {
+function openSettings() {
   window.location.href = "account.html";
 }
 
