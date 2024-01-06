@@ -67,7 +67,7 @@ async function SignUp(element) {
         "lang":language
     };
 
-    const response = await fetch("https://hyphenos.ctih.repl.co/sign-up", {
+    const response = await fetch("hyphenos.vercel.app/sign-up", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -101,7 +101,7 @@ async function Login(element) {
     let creds = {
         "TOKEN": TOKEN,
     }
-    const response = fetch("https://hyphenos.ctih.repl.co/login", {
+    const response = fetch("hyphenos.vercel.app/login", {
         method:"POST",
         headers: {
             "Content-Type": "application/json"
@@ -137,7 +137,7 @@ async function RetrieveData() {
         "TOKEN": TOKEN,
     }
 
-    const response = fetch("https://hyphenos.ctih.repl.co/retrieve-data", {
+    const response = fetch("hyphenos.vercel.app/retrieve-data", {
         method:"POST",
         headers: {
             "Content-Type": "application/json"
